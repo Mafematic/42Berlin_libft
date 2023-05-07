@@ -17,8 +17,12 @@ int main(void)
 {
 	UNITY_BEGIN();
 	
+	RUN_TEST(test_ft_atoi);
+	RUN_TEST(test_ft_bzero);
+	RUN_TEST(test_ft_isascii);
+	RUN_TEST(test_ft_isdigit); 
 	RUN_TEST(test_ft_isprint);
-
+	
 
 	return UNITY_END(); 
 }

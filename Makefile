@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-I. -I./src -I../Unity/src
 
-LIB_SOURCES=src/ft_isprint.c
+LIB_SOURCES=src/ft_isprint.c src/ft_atoi.c src/ft_bzero.c src/ft_isascii.c src/ft_isdigit.c
 #LIB_SOURCES=$(wildcard src/*.c)
 LIB_OBJECTS=$(LIB_SOURCES:.c=.o)
 LIBRARY=libft.a

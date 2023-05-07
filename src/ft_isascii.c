@@ -1,4 +1,4 @@
-int ft_isascii(char c)
+int ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 	{
@@ -6,4 +6,3 @@ int ft_isascii(char c)
 	}
 	return (0); 
 }
-
