@@ -16,6 +16,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 	return NULL; 
 }
 
+/*
 int main(void)
 {
 	char str[] = "Hello";
@@ -25,5 +26,6 @@ int main(void)
 	sol = ft_memchr(str, a, n); 
 	printf("%s\n", sol); 
 }
+*/ 
 
 

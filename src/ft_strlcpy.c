@@ -1,15 +1,5 @@
 #include <stdio.h>
-
-int ft_strlen(const char *str)
-{
-    int i = 0;
-    while (str[i] != '\0')
-    {   
-        i++;
-    }
-    return (i);
-}
-
+#include "libft.h"
 
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -25,13 +15,13 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size)
 	while (i < size - 1 && i < src_len)
 	{
 		dst[i] = src[i];
-		printf("%c\n", dst[i]);
 		i++;
 	}
 	dst[i] = '\0'; 
 	return src_len;
 }
 
+/*
 int main(void)
 {
 	char dest[10];
@@ -43,3 +33,4 @@ int main(void)
     printf("%s\n", dest);
     return 0;
 }
+*/

@@ -1,7 +1,9 @@
 CC=gcc
 CFLAGS=-I. -I./src -I../Unity/src
 
-LIB_SOURCES=src/ft_isprint.c src/ft_atoi.c src/ft_bzero.c src/ft_isascii.c src/ft_isdigit.c
+LIB_SOURCES=src/ft_isprint.c src/ft_atoi.c src/ft_bzero.c src/ft_isascii.c src/ft_isdigit.c \
+			src/ft_isalnum.c src/ft_isalpha.c src/ft_memchr.c src/ft_memcpy.c src/ft_memset.c \
+			src/ft_strchr.c src/ft_strlcat.c src/ft_strlcpy.c src/ft_strlen.c
 #LIB_SOURCES=$(wildcard src/*.c)
 LIB_OBJECTS=$(LIB_SOURCES:.c=.o)
 LIBRARY=libft.a
@@ -11,7 +13,7 @@ TEST_OBJECTS=$(TEST_SOURCES:.c=.o)
 TEST_RUNNER=test_runner
 
 .PHONY: all clean fclean re
- 
+
 all: $(LIBRARY) $(TEST_RUNNER)
 
 $(LIBRARY): $(LIB_OBJECTS)
@@ -37,23 +39,3 @@ fclean: clean
 
 re: fclean all
 
-
-
-# # CC=gcc
-# # CFLAGS=-I. -I./src -I../Unity/src
-
-# # # Specify the source and test files explicitly
-# # LIB_SOURCES=src/ft_isprint.c
-# # TEST_SOURCES=Tests/test_ft_isprint.c
-
-# # # Build the library
-# # library: $(LIB_SOURCES)
-# # 	$(CC) $(CFLAGS) -o my_library $(LIB_SOURCES)
-
-# # # Build the test runner
-# # test: $(TEST_SOURCES) src/ft_isprint.c ../Unity/src/unity.c Tests/test_runner.c
-# # 	$(CC) $(CFLAGS) -o test_runner $(TEST_SOURCES) src/ft_isprint.c ../Unity/src/unity.c Tests/test_runner.c
-
-# # # Clean up build artifacts
-# # clean:
-# # 	rm -f my_library test_runner 

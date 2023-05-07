@@ -11,15 +11,21 @@ char *ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
+	if (c == '\0')
+	{
+		return (char *)&s[i];
+	}
 	return NULL; 
 }
 
+/*
 int main(void)
 {
-	char str[] = "Hello";
-	int a = 'e'; 
+	char str[] = "Hello World";
+	int a = '\0'; 
 	char *sol; 
 	sol = ft_strchr(str, a); 
 	printf("%s\n", sol); 
 }
+*/
 
