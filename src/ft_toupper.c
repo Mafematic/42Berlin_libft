@@ -9,10 +9,12 @@ int ft_toupper(int c)
 	return c; 
 }
 
+/*
 int main(void)
 {
 	int a;
 	a = ft_toupper('.');
 	printf("%c\n", a);
 }
+*/
 

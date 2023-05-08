@@ -1,3 +1,6 @@
+#include <unistd.h>
+#include <stdio.h>
+
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char *d = dest;
@@ -22,3 +25,13 @@ void *ft_memmove(void *dest, const void *src, size_t n)
     }
 	return dest; 
 }
+
+/*
+int main(void)
+{
+	char str[] = "Hello World"; 
+	ft_memmove(str, str, 4); 
+
+	printf("%s\n", str); 
+}
+*/ 

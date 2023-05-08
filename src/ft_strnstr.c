@@ -22,7 +22,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
     return NULL;
 }
 
-
+/*
 int main(void)
 {
 	char str1[] = "This is a sentence";
@@ -32,3 +32,4 @@ int main(void)
 	final = ft_strnstr(str1, str2, 16);
 	printf("%s\n", final);
 }
+*/

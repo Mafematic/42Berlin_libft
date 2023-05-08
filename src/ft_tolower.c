@@ -9,10 +9,12 @@ int ft_tolower(int c)
     return c;
 }
 
+/*
 int main(void)
 {
     int a;
     a = ft_tolower('A');
     printf("%c\n", a);
 }
+*/
 

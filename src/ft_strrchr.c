@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+/*
 int ft_strlen(const char *s)
 {
 	int i = 0;
@@ -9,6 +10,7 @@ int ft_strlen(const char *s)
 	}
 	return (i);
 }
+*/
 
 char *ft_strrchr(const char *s, int c)
 {
@@ -24,6 +26,7 @@ char *ft_strrchr(const char *s, int c)
     return NULL;
 }
 
+/*
 int main(void)
 {
     char str[] = "Hello";
@@ -32,4 +35,4 @@ int main(void)
     sol = ft_strrchr(str, a);
     printf("%s\n", sol);
 }
-
+*/

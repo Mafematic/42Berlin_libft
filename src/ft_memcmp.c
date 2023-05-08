@@ -17,6 +17,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
+/*
 int main(void)
 {
 	char str1[] = "Hello";
@@ -25,3 +26,4 @@ int main(void)
 	n = ft_memcmp(str1, str2, 3);
 	printf("%d\n", n); 
 }
+*/
