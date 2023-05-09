@@ -63,8 +63,8 @@ char *ft_strtrim(char const *s1, char const *set)
 
 int main(void)
 {
-	char str[] = "___Hello___";
-	char set[] = "_";	
+	char str[] = "iiiHelloiii";
+	char set[] = " ,i";	
 	char *final;
 	final = ft_strtrim(str, set);
 	printf("%s\n", final); 

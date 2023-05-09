@@ -1,5 +1,6 @@
 #include <stdlib.h>
 
+/*
 void *ft_memset(void *ptr, int value, size_t num)
 {
 	unsigned char *p = ptr;
@@ -10,7 +11,7 @@ void *ft_memset(void *ptr, int value, size_t num)
 		i++;
 	}
 	return (ptr);
-}
+}*/
 
 void *ft_calloc(size_t nmemb, size_t size)
 {
