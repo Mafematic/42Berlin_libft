@@ -1,5 +1,19 @@
 #include <stdio.h>
 #include "libft.h"
+#include <bsd/string.h>
+
+
+size_t ft_strlen(const char *str)
+{
+	size_t i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return i;
+}
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -30,7 +44,7 @@ int main(void)
 	char dest[] = "world";
 	int size = 10;
 	int n = 0;
-	n = ft_strlcat(dest, src, size);
+	n = strlcat(dest, src, size);
 	printf("%d\n", n);
 	printf("%s\n", dest);
  	return 0;

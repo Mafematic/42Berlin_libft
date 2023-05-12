@@ -1,7 +1,9 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
+/*
 size_t ft_strlen(const char *str)
 {
     size_t i;
@@ -13,6 +15,7 @@ size_t ft_strlen(const char *str)
     }
     return i;
 }
+*/
 
 char change_character_at_index(unsigned int index, char c)
 {
@@ -44,6 +47,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     return word; 
 }
 
+/*
 int main(void)
 {
     char str[] = "Hello"; 
@@ -54,3 +58,4 @@ int main(void)
 
     return 0; 
 }
+*/

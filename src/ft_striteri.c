@@ -20,6 +20,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *))
     }
 }
 
+/*
 int main(void)
 {
     char str[] = "Hello"; 
@@ -28,3 +29,4 @@ int main(void)
     printf("%s\n", str); 
     return 0; 
 }
+*/
