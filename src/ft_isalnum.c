@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdio.h>
 
 int ft_isalnum(int c)
 {
@@ -10,3 +11,11 @@ int ft_isalnum(int c)
 	return (0); 
 }
 
+/*
+int main(void)
+{
+	int n = 0;
+	n = ft_isalnum('#');
+	printf("%d\n", n);
+}
+*/

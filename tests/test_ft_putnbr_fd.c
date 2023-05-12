@@ -24,8 +24,8 @@ void test_ft_putnbr_fd(void)
     // Read the content of the temporary file
     char buffer[100];
     fgets(buffer, sizeof(buffer), tempFile);
-    fgets(buffer + strlen(buffer), sizeof(buffer) - strlen(buffer), tempFile);
-    fgets(buffer + strlen(buffer), sizeof(buffer) - strlen(buffer), tempFile);
+    fgets(buffer + ft_strlen(buffer), sizeof(buffer) - ft_strlen(buffer), tempFile);
+    fgets(buffer + ft_strlen(buffer), sizeof(buffer) - ft_strlen(buffer), tempFile);
 
     // Close the temporary file
     fclose(tempFile);

@@ -21,7 +21,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 int main(void)
 {
 	char str1[] = "Hello";
-	char str2[] = "Hello";
+	char str2[] = "World";
 	int n = 0;
 	n = ft_memcmp(str1, str2, 3);
 	printf("%d\n", n); 

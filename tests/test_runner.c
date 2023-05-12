@@ -24,6 +24,7 @@ int main(void)
 	RUN_TEST(test_ft_isascii);
 	RUN_TEST(test_ft_isdigit); 
 	RUN_TEST(test_ft_isprint);
+	RUN_TEST(test_ft_itoa);
 	RUN_TEST(test_ft_memchr);
 	RUN_TEST(test_ft_memcmp);
 	RUN_TEST(test_ft_memcpy);
@@ -43,7 +44,6 @@ int main(void)
 	RUN_TEST(test_ft_tolower);
 	RUN_TEST(test_ft_toupper);
 
-	
 	return UNITY_END(); 
 }
 

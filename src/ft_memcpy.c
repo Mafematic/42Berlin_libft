@@ -4,10 +4,10 @@
 
 void *ft_memcpy(void *destination, const void *source, size_t num)
 {
-	if (destination == NULL || source == NULL)
+	/*if (destination == NULL || source == NULL)
 	{
 		return NULL;
-	}
+	}*/
 	unsigned char *dest = destination; 
 	const unsigned char *src = source; 
 	size_t i = 0;
