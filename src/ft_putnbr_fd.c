@@ -1,10 +1,12 @@
 #include <unistd.h>
+#include "libft.h"
 
+/*
 void ft_putchar_fd(char c, int fd)
 {
     write(fd, &c, 1);
 }
-
+*/ 
 void ft_putnbr_fd(int n, int fd) 
 {
     long num = n;
@@ -21,8 +23,10 @@ void ft_putnbr_fd(int n, int fd)
     }
 }
 
+/*
 int main(void)
 {
     ft_putnbr_fd(-2147483648, 1);
     return 0; 
 }
+*/

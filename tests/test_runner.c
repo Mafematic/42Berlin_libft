@@ -28,8 +28,12 @@ int main(void)
 	RUN_TEST(test_ft_memcmp);
 	RUN_TEST(test_ft_memcpy);
 	RUN_TEST(test_ft_memmove);
-	RUN_TEST(test_ft_memset); 
-	RUN_TEST(test_ft_strchr); 
+	RUN_TEST(test_ft_memset);
+	RUN_TEST(test_ft_putchar_fd);
+	RUN_TEST(test_ft_putendl_fd);
+	RUN_TEST(test_ft_putnbr_fd);
+	RUN_TEST(test_ft_putstr_fd);
+	RUN_TEST(test_ft_strchr);
 	RUN_TEST(test_ft_strlcat);
 	RUN_TEST(test_ft_strlcpy);
 	RUN_TEST(test_ft_strlen);
@@ -38,6 +42,7 @@ int main(void)
 	RUN_TEST(test_ft_strrchr);
 	RUN_TEST(test_ft_tolower);
 	RUN_TEST(test_ft_toupper);
+
 	
 	return UNITY_END(); 
 }

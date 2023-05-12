@@ -10,7 +10,9 @@ void ft_putstr_fd(char *s, int fd)
     }
 }
 
+/*
 int main()
 {
     ft_putstr_fd("Hello", 1); 
 }
+*/
