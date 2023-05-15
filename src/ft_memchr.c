@@ -4,7 +4,7 @@
 void *ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char *p = s;
-	int i = 0; 
+	size_t i = 0; 
 	while (i < n)
 	{
 		if (p[i] == c)

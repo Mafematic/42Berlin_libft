@@ -3,6 +3,12 @@
 
 #include <unistd.h>
 
+typedef struct s_list
+{
+    void *content;
+    struct s_list *next;
+} t_list;
+
 int ft_atoi(const char *nptr);
 void ft_bzero(void *ptr, size_t num);
 void *ft_calloc(size_t nmemb, size_t size);
