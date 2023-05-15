@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-I. -I./src -I../Unity/src -DUNITY_INCLUDE_DOUBLE
+CFLAGS=-I. -I./src -I../Unity/src -DUNITY_INCLUDE_DOUBLE -Wall -Wextra -Werror
 
 LIB_SOURCES=src/ft_isprint.c src/ft_atoi.c src/ft_bzero.c src/ft_isascii.c src/ft_isdigit.c \
 			src/ft_isalnum.c src/ft_isalpha.c src/ft_memchr.c src/ft_memcpy.c src/ft_memset.c \
