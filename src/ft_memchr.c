@@ -1,19 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fszendzi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/17 15:06:30 by fszendzi          #+#    #+#             */
+/*   Updated: 2023/05/17 15:06:32 by fszendzi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h>
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *p = s;
-	size_t i = 0; 
+	const unsigned char	*p;
+	size_t				i;
+
+	p = s;
+	i = 0;
 	while (i < n)
 	{
 		if (p[i] == c)
 		{
-			return (void*)(p + i);
+			return ((void *)(p + i));
 		}
 		i++;
 	}
-	return NULL; 
+	return (NULL);
 }
 
 /*
@@ -27,5 +42,3 @@ int main(void)
 	printf("%s\n", sol); 
 }
 */ 
-
-

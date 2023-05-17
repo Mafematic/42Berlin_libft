@@ -1,17 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fszendzi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/17 15:07:36 by fszendzi          #+#    #+#             */
+/*   Updated: 2023/05/17 15:07:38 by fszendzi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char *d = dest;
-	const unsigned char *s = src; 
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
 
-	size_t i = 0;
-    if (d != s && d < s)
-    {
-        while (i < n)
-        {
+	d = dest;
+	s = src;
+	i = 0;
+	if (d != s && d < s)
+	{
+		while (i < n)
+		{
 			d[i] = s[i];
 			i++;
 		}
@@ -23,7 +38,7 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 			d[n] = s[n];
 		}
 	}
-	return dest; 
+	return (dest);
 }
 
 /*
@@ -36,5 +51,3 @@ int main(void)
 	printf("%s\n", str12); 
 }
 */
-
-

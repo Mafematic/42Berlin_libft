@@ -1,20 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fszendzi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/17 14:58:39 by fszendzi          #+#    #+#             */
+/*   Updated: 2023/05/17 14:58:41 by fszendzi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h> 
 
-int ft_iswhitespace(char c)
+int	ft_iswhitespace(char c)
 {
 	if ((c >= 9 && c <= 13) || c == ' ')
 	{
-		return 1; 
+		return (1);
 	}
-	return 0; 
+	return (0);
 }
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-	int i = 0;
-	int is_negative = 1; 
-	long num = 0;
+	int		i;
+	int		is_negative;
+	long	num;
+
+	i = 0;
+	is_negative = 1;
+	num = 0;
 	while (ft_iswhitespace(nptr[i]))
 	{
 		i++;
@@ -30,11 +46,11 @@ int ft_atoi(const char *nptr)
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		num *= 10; 
+		num *= 10;
 		num += nptr[i] - '0';
-	i++;
+		i++;
 	}
-	return num * is_negative;
+	return (num * is_negative);
 }
 
 /*
@@ -46,4 +62,3 @@ int main(void)
 	return 0;
 }
 */
-

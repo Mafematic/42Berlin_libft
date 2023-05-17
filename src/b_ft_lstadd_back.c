@@ -1,46 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   b_ft_lstadd_back.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fszendzi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/17 14:54:56 by fszendzi          #+#    #+#             */
+/*   Updated: 2023/05/17 14:55:06 by fszendzi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
-typedef struct s_list
+t_list	*create_lst(int *a, int n)
 {
-    void* content; 
-    struct s_list *next; 
-} t_list;
+	t_list	*first;
+	t_list	*t;
+	t_list	*last;
+	int		i;
 
-
-t_list* create_lst(int *a, int n)
-{
-    t_list *first, *t, *last;
-    first = (t_list*)malloc(sizeof(t_list));
-    first->content = malloc(sizeof(int));
-    *(int*)first->content = a[0]; 
-    first->next = NULL; 
-    last = first; 
-
-    int i = 1; 
-    while (i < n)
-    {
-        t = (t_list*)malloc(sizeof(t_list));
-        t->content = malloc(sizeof(int));
-        *(int*)t->content = a[i]; 
-        t->next = NULL;
-        last->next = t; 
-        last = t;
-        i++; 
-    }
-    return first; 
+	first = (t_list *)malloc(sizeof(t_list));
+	first->content = malloc(sizeof(int));
+	*(int *)first->content = a[0];
+	first->next = NULL;
+	last = first;
+	i = 1;
+	while (i < n)
+	{
+		t = (t_list *)malloc(sizeof(t_list));
+		t->content = malloc(sizeof(int));
+		*(int *)t->content = a[i];
+		t->next = NULL;
+		last->next = t;
+		last = t;
+		i++;
+	}
+	return (first);
 }
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    while (*lst != NULL)
-    {
-        lst = &(*lst)->next; 
-    }
-    *lst = new; 
+	while (*lst != NULL)
+	{
+		lst = &(*lst)->next;
+	}
+	*lst = new;
 }
 
-int main(void)
+/*
+int	main(void)
 {
     int arr[] = {2, 22, 222, 2222, 23};
     int n = 5; 
@@ -73,3 +83,4 @@ int main(void)
         free(temp);
     }
 }
+*/

@@ -1,25 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fszendzi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/17 15:07:14 by fszendzi          #+#    #+#             */
+/*   Updated: 2023/05/17 15:07:16 by fszendzi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 
-void *ft_memcpy(void *destination, const void *source, size_t num)
+void	*ft_memcpy(void *destination, const void *source, size_t num)
 {
-	/*if (destination == NULL || source == NULL)
-	{
-		return NULL;
-	}*/
-	unsigned char *dest = destination; 
-	const unsigned char *src = source; 
-	size_t i = 0;
+	unsigned char		*dest;
+	const unsigned char	*src;
+	size_t				i;
 
-	while (i < num) 
+	dest = destination;
+	src = source;
+	i = 0;
+	while (i < num)
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	return destination;
+	return (destination);
 }
-
 
 /* 
 int main(void)
@@ -46,4 +56,4 @@ int main(void)
 
 	return 0;
 }
-*/ 
+*/

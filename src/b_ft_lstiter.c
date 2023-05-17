@@ -1,33 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   b_ft_lstiter.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fszendzi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/17 14:57:04 by fszendzi          #+#    #+#             */
+/*   Updated: 2023/05/17 14:57:07 by fszendzi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
-typedef struct s_list
+t_list	*create_lst(int *arr, int n)
 {
-    void* content; 
-    struct s_list *next;
-} t_list; 
+    t_list	*first; 
+	t_list	*t;
+	t_list	*last;
+	int		i;
 
-t_list* create_lst(int *arr, int n)
-{
-    t_list *first, *t, *last;
-    first = (t_list*)malloc(sizeof(t_list)); 
-    first->content = malloc(sizeof(int)); 
-    *(int*)first->content = arr[0]; 
-    first->next = NULL; 
-    last = first; 
-
-    int i = 1;
-    while(i < n)
-    {
-        t = (t_list*)malloc(sizeof(t_list)); 
-        t->content = malloc(sizeof(int));
-        *(int *)t->content = arr[i];
-        t->next = NULL;
-        last->next = t; 
-        last = t; 
-        i++; 
-    }
-    return first; 
+	first = (t_list *)malloc(sizeof(t_list));
+	first->content = malloc(sizeof(int));
+	*(int *)first->content = arr[0];
+	first->next = NULL;
+	last = first;
+	i = 1;
+	while(i < n)
+	{
+		t = (t_list *)malloc(sizeof(t_list));
+		t->content = malloc(sizeof(int));
+		*(int *)t->content = arr[i];
+		t->next = NULL;
+		last->next = t;
+		last = t;
+		i++;
+	}
+	return (first); 
 }
 
 void add_two(void *content)
@@ -48,6 +58,7 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
     }
 }
 
+/*
 int main(void)
 {
     int arr[] = {2, 4, 6, 7, 11}; 
@@ -75,3 +86,4 @@ int main(void)
 
     return 0; 
 }
+*/
