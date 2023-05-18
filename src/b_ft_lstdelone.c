@@ -12,40 +12,33 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
-typedef struct s_list
+void	del(void *content)
 {
-    void* content; 
-    struct s_list *next; 
-} t_list;
-
-void del(void *content)
-{
-    free(content);
+	free(content);
 }
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    if (lst == NULL)
-        return;
-
-    if (del != NULL)
-        del(lst->content);
-
-    free(lst);
-
-    lst = NULL;
+	if (lst == NULL)
+		return ;
+	if (del != NULL)
+		del(lst->content);
+	free(lst);
+	lst = NULL;
 }
 
-int main(void)
+/*
+int	main(void)
 {
-    t_list *new;
-    new = (t_list*)malloc(sizeof(t_list)); 
-    new->content = malloc(sizeof(int)); 
-    *(int*)new->content = 10; 
-    new->next = NULL; 
-
+	t_list *new;
+	new = (t_list*)malloc(sizeof(t_list));
+	new->content = malloc(sizeof(int));
+	*(int *)new->content = 10;
+	new->next = NULL; 
     printf("%d\n", *(int*)new->content);
     ft_lstdelone(new, del);
     printf("%d\n", *(int *)new->content);
 }
+*/

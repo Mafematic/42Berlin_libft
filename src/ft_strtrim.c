@@ -14,65 +14,68 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
 		i++;
 	}
-	return i;
+	return (i);
 }
 
-int is_set(char const *set, char c)
+int	is_set(char const *set, char c)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (set[i] != '\0')
 	{
 		if (set[i] == c)
 		{
-			return 1;
+			return (1);
 		}
 		i++;
 	}
-	return 0;
+	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t len = ft_strlen(s1); 
-	size_t i = 0;
-	size_t j = 0;
-	char *trimmed;
-	
+	size_t	len;
+	size_t	i;
+	size_t	j;
+	char	*trimmed;
+
+	len = ft_strlen(s1);
+	i = 0;
+	j = 0;
 	while (is_set(set, s1[i]))
 	{
 		i++;
 	}
-	
-	while (is_set(set, s1[len-1]))
+	while (is_set(set, s1[len - 1]))
 	{
 		len--;
 	}
-
-	trimmed = (char *)malloc(sizeof(char)*(len-i) + 1);
+	trimmed = (char *)malloc(sizeof(char) * (len - i) + 1);
 	if (!trimmed)
 	{
-		return NULL;
+		return (NULL);
 	}
-
 	while (i < len)
 	{
 		trimmed[j] = s1[i];
 		j++;
-		i++; 
+		i++;
 	}
 	trimmed[j] = '\0';
-	return trimmed;
+	return (trimmed);
 }
 
+/*
 int main(void)
 {
 	char str[] = "iiiHelloiii";
@@ -82,3 +85,4 @@ int main(void)
 	printf("%s\n", final); 
 	return 0;
 }
+*/

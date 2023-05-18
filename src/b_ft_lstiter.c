@@ -16,7 +16,7 @@
 
 t_list	*create_lst(int *arr, int n)
 {
-    t_list	*first; 
+	t_list	*first;
 	t_list	*t;
 	t_list	*last;
 	int		i;
@@ -27,7 +27,7 @@ t_list	*create_lst(int *arr, int n)
 	first->next = NULL;
 	last = first;
 	i = 1;
-	while(i < n)
+	while (i < n)
 	{
 		t = (t_list *)malloc(sizeof(t_list));
 		t->content = malloc(sizeof(int));
@@ -37,25 +37,24 @@ t_list	*create_lst(int *arr, int n)
 		last = t;
 		i++;
 	}
-	return (first); 
+	return (first);
 }
 
-void add_two(void *content)
+void	add_two(void *content)
 {
-    if (content != NULL)
-    {
-        *(int*)content += 2; 
-    }
+	if (content != NULL)
+	{
+		*(int *)content += 2;
+	}
 }
 
-
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    while (lst != NULL)
-    {
-        f(lst->content); 
-        lst = lst->next; 
-    }
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
 
 /*

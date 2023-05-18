@@ -13,16 +13,18 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void ft_bzero(void *ptr, size_t num) 
+void	ft_bzero(void *ptr, size_t num)
 {
-	unsigned char *p = ptr;
-	size_t i = 0;
-	while (i < num) 
+	unsigned char	*p;
+	size_t			i;
+
+	p = ptr;
+	i = 0;
+	while (i < num)
 	{
 		p[i] = 0;
 		i++;
 	}
-
 }
 
 /*

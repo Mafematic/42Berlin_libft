@@ -12,67 +12,64 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
-typedef struct s_list
+void	del_int(void *content)
 {
-    void* content; 
-    struct s_list *next;
-} t_list;
-
-void del_int(void *content)
-{
-    if (content != NULL)
-        free(content);
+	if (content != NULL)
+		free(content);
 }
 
-t_list *create_lst(int *a, int n)
+t_list	*create_lst(int *a, int n)
 {
-    t_list *first, *t, *last; 
-    first = (t_list*)malloc(sizeof(t_list));
-    first->content = malloc(sizeof(int)); 
-    *(int*)first->content = a[0];
-    first->next = NULL; 
-    last = first;
+	t_list	*first;
+	t_list	*t;
+	t_list	*last;
+	int		i;
 
-    int i = 1; 
-    while (i < n)
-    {
-        t = (t_list *)malloc(sizeof(t_list));
-        t->content = malloc(sizeof(int));
-        *(int*)t->content = a[i]; 
-        t->next = NULL; 
-        last->next = t; 
-        last = t; 
-        i++; 
-    }
-    return first; 
+	first = (t_list *)malloc(sizeof(t_list));
+	first->content = malloc(sizeof(int));
+	*(int *)first->content = a[0];
+	first->next = NULL;
+	last = first;
+	i = 1;
+	while (i < n)
+	{
+		t = (t_list *)malloc(sizeof(t_list));
+		t->content = malloc(sizeof(int));
+		*(int *)t->content = a[i];
+		t->next = NULL;
+		last->next = t;
+		last = t;
+		i++;
+	}
+	return (first);
 }
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-    if (lst == NULL || *lst == NULL)
-        return;
+	t_list	*current;
+	t_list	*next;
 
-    t_list *current = *lst;
-    t_list *next;
-
-    while (current != NULL)
-    {
-        next = current->next;
-
-        if (del != NULL)
-            del(current->content);
-
-        free(current);
-        current = next;
-    }
-    *lst = NULL;
+	if (lst == NULL || *lst == NULL)
+		return ;
+	current = *lst;
+	while (current != NULL)
+	{
+		next = current->next;
+		if (del != NULL)
+			del(current->content);
+		free(current);
+		current = next;
+	}
+	*lst = NULL;
 }
 
+/*
 int main(void)
 {
-    int arr[] = {1, 2, 4, 5, 29}; 
-    int n = 5; 
+	int arr[] = {1, 2, 4, 5, 29};
+	int n = 5; 
 
     t_list *lst = create_lst(arr, n);
     t_list *current = lst;
@@ -96,3 +93,4 @@ int main(void)
 
     return 0; 
 }
+*/

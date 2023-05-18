@@ -14,38 +14,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
 		i++;
 	}
-	return i;
+	return (i);
 }
 
-
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t len_s1 = ft_strlen(s1);
-	size_t len_s2 = ft_strlen(s2);
-	size_t len = len_s1 + len_s2;
+	size_t	len_s1;
+	size_t	len_s2;
+	size_t	len;
+	size_t	i;
+	size_t	j;
+	char	*joined;
 
-	char *joined; 
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	len = len_s1 + len_s2;
 	joined = (char *)malloc(sizeof(char) * (len) + 1);
 	if (!joined)
 	{
-		return NULL;
+		return (NULL);
 	}
-	size_t i = 0; 
+	i = 0;
 	while (i < len_s1)
 	{
 		joined[i] = s1[i];
 		i++;
 	}
-	size_t j = 0;
+	j = 0;
 	while (j < len_s2)
 	{
 		joined[i] = s2[j];
@@ -53,9 +57,10 @@ char *ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	joined[i] = '\0';
-	return joined;
+	return (joined);
 }
 
+/*
 int main(void)
 {
 	char str1[] = "Hello";
@@ -66,3 +71,4 @@ int main(void)
 	free(final);
 	return 0;
 }
+*/

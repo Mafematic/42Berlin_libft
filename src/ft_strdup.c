@@ -14,34 +14,37 @@
 #include <unistd.h>
 #include <stdio.h>
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
 		i++;
 	}
-	return i;
+	return (i);
 }
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-	size_t len = ft_strlen(s);
-	char *cpy; 
-	cpy = (char *)malloc(sizeof(char) *len + 1);
+	size_t	len;
+	char	*cpy;
+	int		i;
 
-	int i = 0;
+	len = ft_strlen(s);
+	cpy = (char *)malloc(sizeof(char) * len + 1);
+	i = 0;
 	while (i < len)
 	{
 		cpy[i] = s[i];
 		i++;
 	}
 	cpy[i] = '\0';
-	return cpy;
+	return (cpy);
 }
 
+/*
 int main(void)
 {
 	char str[] = "Hello";
@@ -49,3 +52,4 @@ int main(void)
 	final = ft_strdup(str);
 	printf("%s\n", final);
 }
+*/
