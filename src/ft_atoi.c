@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h> 
+#include <libft.h>
 
-int	ft_iswhitespace(char c)
+static int	ft_iswhitespace(char c)
 {
 	if ((c >= 9 && c <= 13) || c == ' ')
 	{
@@ -32,13 +31,9 @@ int	ft_atoi(const char *nptr)
 	is_negative = 1;
 	num = 0;
 	while (ft_iswhitespace(nptr[i]))
-	{
 		i++;
-	}
 	if (nptr[i] == '+')
-	{
 		i++;
-	}
 	if (nptr[i] == '-')
 	{
 		is_negative *= -1;
