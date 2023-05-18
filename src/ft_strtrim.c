@@ -13,18 +13,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 int	is_set(char const *set, char c)
 {
@@ -48,7 +37,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	j;
 	char	*trimmed;
-
+	if (!s1 || !set)
+		return (NULL);
 	len = ft_strlen(s1);
 	i = 0;
 	j = 0;
@@ -56,7 +46,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		i++;
 	}
-	while (is_set(set, s1[len - 1]))
+	while (len > i && is_set(set, s1[len - 1]))
 	{
 		len--;
 	}

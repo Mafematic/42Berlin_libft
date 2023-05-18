@@ -34,8 +34,11 @@ int main(void)
 	RUN_TEST(test_ft_putendl_fd);
 	RUN_TEST(test_ft_putnbr_fd);
 	RUN_TEST(test_ft_putstr_fd);
+	RUN_TEST(test_ft_split);
 	RUN_TEST(test_ft_strchr);
+	RUN_TEST(test_ft_strdup);
 	RUN_TEST(test_ft_striteri);
+	RUN_TEST(test_ft_strjoin);
 	RUN_TEST(test_ft_strlcat);
 	RUN_TEST(test_ft_strlcpy);
 	RUN_TEST(test_ft_strlen);
@@ -43,6 +46,8 @@ int main(void)
 	RUN_TEST(test_ft_strncmp);
 	RUN_TEST(test_ft_strnstr);
 	RUN_TEST(test_ft_strrchr);
+	RUN_TEST(test_ft_strtrim);
+	RUN_TEST(test_ft_substr); 
 	RUN_TEST(test_ft_tolower);
 	RUN_TEST(test_ft_toupper);
 

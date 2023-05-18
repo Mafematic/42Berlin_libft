@@ -13,7 +13,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include "libft.h"
 
+/*
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -25,12 +27,13 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
+*/
 
-char	*ft_strdup(const char *s)
+char *ft_strdup(const char *s)
 {
-	size_t	len;
-	char	*cpy;
-	int		i;
+	size_t len;
+	char *cpy;
+	size_t i;
 
 	len = ft_strlen(s);
 	cpy = (char *)malloc(sizeof(char) * len + 1);
