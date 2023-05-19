@@ -1,7 +1,8 @@
 #include "../Unity/src/unity.h"
 #include "test_libft.h"
 #include "libft.h"
-#include <bsd/string.h>
+#include <string.h>
+/*#include <bsd/string.h>*/
 
 void test_ft_strlcat(void)
 {

@@ -74,47 +74,47 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 }
 */
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    size_t i, j, start, word_count;
-    char **words;
+	size_t	i;
+	size_t	j;
+	size_t	start;
+	size_t	word_count;
+	char	**words;
 
-    if (!s || !*s)
-        return NULL;
-
-    i = 0;
-    word_count = 0;
-    while (s[i] != '\0') 
-    {
-        while (s[i] == c)
-            i++;
-        if (s[i] != '\0')
-            word_count++;
-        while (s[i] != '\0' && s[i] != c)
-            i++;
-    }
-
-    words = (char **)malloc(sizeof(char *) * (word_count + 1));
-    if (!words)
-        return NULL;
-
-    i = 0;
-    j = 0;
-    while (s[i] != '\0') 
-    {
-        while (s[i] == c)
-            i++;
-        if (s[i] != '\0') 
-        {
-            start = i;
-            while (s[i] != '\0' && s[i] != c)
-                i++;
-            words[j] = ft_substr(s, start, i - start);
-            j++;
-        }
-    }
-    words[j] = NULL;
-    return words;
+	if (!s || !*s)
+		return (NULL);
+	i = 0;
+	word_count = 0;
+	while (s[i] != '\0')
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			word_count++;
+		while (s[i] != '\0' && s[i] != c)
+			i++;
+	}
+	words = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (!words)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i] != '\0')
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+		{
+			start = i;
+			while (s[i] != '\0' && s[i] != c)
+				i++;
+			words[j] = ft_substr(s, start, i - start);
+			j++;
+		}
+	}
+	words[j] = NULL;
+	return (words);
 }
 
 /*

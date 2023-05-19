@@ -14,15 +14,18 @@ BOBJECTS = $(BSOURCES:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I. -I./src -DUNITY_INCLUDE_DOUBLE 
-LDFLAGS = -L/usr/local/lib # Add the library path if necessary
-LDLIBS = -lbsd # Add the library name
+#LDFLAGS = -L/usr/local/lib # Add the library path if necessary
+#LDLIBS = -lbsd # Add the library name
 
 TEST_SOURCES = $(wildcard tests/*.c)
 TEST_OBJECTS = $(TEST_SOURCES:.c=.o)
 TEST_RUNNER = test_runner
 
 $(TEST_RUNNER): $(TEST_OBJECTS) $(NAME)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ ../Unity/src/unity.c $(LDLIBS)
+
+	$(CC) $(CFLAGS) -o $@ $^ ../Unity/src/unity.c $(NAME)
+
+# $(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ ../Unity/src/unity.c $(LDLIBS)
 
 all: $(NAME) $(TEST_RUNNER)
 
@@ -42,7 +45,6 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
 test: $(TEST_RUNNER)
 	./$(TEST_RUNNER)
 

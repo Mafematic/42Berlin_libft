@@ -15,42 +15,41 @@
 #include <stdlib.h>
 #include "libft.h"
 
+char	*test_empty(char const *s1, char const *s2)
+{
+	if (!s1 && !s2)
+		return (NULL);
+	else if (!s1)
+		return (ft_strdup(s2));
+	else if (!s2)
+		return (ft_strdup(s1));
+	else
+		return (NULL);
+}
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len_s1;
-	size_t	len_s2;
 	size_t	len;
 	size_t	i;
 	size_t	j;
 	char	*joined;
 
-	if (!s1 && !s2)
-		return (NULL);
-	else if (!s1)
-		return (ft_strdup(s2)); 
-	else if (!s2)
-		return (ft_strdup(s1));
-
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	len = len_s1 + len_s2;
+	if (!s1 || !s2)
+		return (test_empty(s1, s2));
+	len = ft_strlen(s1) + ft_strlen(s2);
 	joined = (char *)malloc(sizeof(char) * (len) + 1);
 	if (!joined)
-	{
 		return (NULL);
-	}
 	i = 0;
-	while (i < len_s1)
+	while (i < ft_strlen(s1))
 	{
 		joined[i] = s1[i];
 		i++;
 	}
 	j = 0;
-	while (j < len_s2)
+	while (j < ft_strlen(s2))
 	{
-		joined[i] = s2[j];
-		i++;
-		j++;
+		joined[i++] = s2[j++];
 	}
 	joined[i] = '\0';
 	return (joined);

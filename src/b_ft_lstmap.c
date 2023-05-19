@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "libft.h"
+#include <stdio.h>
 
 t_list	*create_lst(int *arr, int n)
 {
@@ -33,52 +34,141 @@ t_list	*create_lst(int *arr, int n)
 		t->content = malloc(sizeof(int));
 		*(int *)t->content = arr[i];
 		t->next = NULL;
-		last->next = NULL;
+		last->next = t;
 		last = t;
 		i++;
 	}
 	return (first);
 }
 
-void	**multiplicate_by_two(void *content)
+t_list *ft_lstnew(void *content)
+{
+	t_list *new;
+
+	new = (t_list *)malloc(sizeof(t_list));
+	if (new == NULL)
+	{
+		return (NULL);
+	}
+	new->content = content;
+	new->next = NULL;
+	return (new);
+}
+
+void ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list *current;
+	t_list *next;
+
+	if (lst == NULL || *lst == NULL)
+		return;
+	current = *lst;
+	while (current != NULL)
+	{
+		next = current->next;
+		if (del != NULL)
+			del(current->content);
+		free(current);
+		current = next;
+	}
+	*lst = NULL;
+}
+
+void ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list *last;
+
+	if (*lst == NULL)
+	{
+		*lst = new;
+	}
+	else
+	{
+		last = *lst;
+		while (last->next != NULL)
+		{
+			last = last->next;
+		}
+		last->next = new;
+	}
+}
+
+void *multiplicate_by_two(void *content)
 {
 	if (content != NULL)
 	{
-		*(int *)content *= 2;
+		int *new_content = (int *)malloc(sizeof(int));
+		*new_content = *(int *)content * 2;
+		return new_content;
 	}
-	return (content);
+	return NULL;
 }
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void del(void *content)
 {
-	while (lst != NULL)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	free(content);
 }
-/*
+
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list *new_list;
+	t_list *current = lst;
+
+	if (!lst)
+		return NULL;
+
+	new_list = ft_lstnew(f(current->content));
+	if (!new_list)
+	{
+		ft_lstclear(&lst, del);
+		return NULL;
+	}
+	while (current->next)
+	{
+		current = current->next;
+		void *content = f(current->content);
+		t_list *new_node = ft_lstnew(content);
+		if (!new_node)
+		{
+			ft_lstclear(&lst, del);
+			ft_lstclear(&new_list, del);
+			return NULL;
+		}
+		ft_lstadd_back(&new_list, new_node);
+	}
+	return new_list;
+}
+
 int main(void)
 {
-    int arr[] = {1, 3, 4, 11, 121}; 
-    int n = 5; 
+	int arr[] = {1, 3, 4, 11, 121};
+	int n = 5;
 
-    t_list *lst = create_lst(arr, n);
+	t_list *lst = create_lst(arr, n);
+	t_list *head = lst; // Save the head of the list
 
-    while (lst != NULL)
-    {
-        printf("%d ", *(int*)lst->content);
-        lst = lst->next; 
-    }
-    printf("\n"); 
-    
-    t_list *current = lst; 
-    ft_lstmap(current, multiplicate_by_two, del); 
-    while (current != NULL)
-    {
-        printf("%d ", *(int *)current->content);
-        current = current->next;
-    }
-    printf("\n");
+	int i = 0;
+	while (i < n)
+	{
+		printf("%d ", *(int *)(lst->content));
+		lst = lst->next;
+		i++;
+	}
+	printf("\n");
+
+	t_list *new_lst = ft_lstmap(head, multiplicate_by_two, del);
+
+	i = 0;
+	lst = new_lst;		// Iterate over new_lst
+	while (lst != NULL) // This should be `lst != NULL` to avoid segfault
+	{
+		printf("%d ", *(int *)(lst->content));
+		lst = lst->next;
+		i++;
+	}
+	printf("\n");
+
+	// Cleanup
+	ft_lstclear(&head, del);
+	ft_lstclear(&new_lst, del);
 }
-*/
